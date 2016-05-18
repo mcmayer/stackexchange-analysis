@@ -20,10 +20,11 @@ Since stackoverflow is the oldest of the Stackexchange sites it is also the
 one with the most users and answers.
 
 ## Analysis ##
-<img src="images/distrib-users.png" alt="distribtion of log(#users)" />
 <img src="images/distrib-answers.png" alt="distribtion of log(#answers)" />
+<img src="images/distrib-users.png" alt="distribtion of log(#users)" />
 <img src="images/answers-users.png" alt="#answers vs. #users" />
 <img src="images/questions-answers.png" alt="#answers vs. #questions" />
+<img src="images/answered-questions.png" alt="%answered vs. #questions" />
 
 ## Directory structure ##
 ### `get.py` ###
