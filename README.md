@@ -7,9 +7,9 @@ available on [http://stackexchange.com/sites](http://stackexchange.com/sites),
 containing the following statistics for each site:
 
 - Number of users
-- Number of questions asked
-- Number of questions answered
-- Percentage of questions answered
+- Number of question
+- Number of answers
+- Percentage of questions marked as answered
 
 ## Motivation ##
 Stackexchange ([http://stackexchange.com/](http://stackexchange.com/)) was
@@ -17,13 +17,31 @@ founded in 2008 as a question-answer site for computer programming questions. In
 founders to branch out beyond computer programming questions and apply their model to other topics. Now more than hundred such topics are covered.
 
 Since stackoverflow is the oldest of the Stackexchange sites it is also the
-one with the most users and answers.
+one with the most users and answers. The following has a very quick analysis 
+of the relationships between:
+
+- the number of users,
+- the number of questions asked, 
+- the number of answers given, and 
+- the percentage of questions marked as answered.
 
 ## Analysis ##
-<img src="images/distrib-answers.png" alt="distribtion of log(#answers)" />
-<img src="images/distrib-users.png" alt="distribtion of log(#users)" />
+### Quantiles of log(#answers) and log(#users) ###
+Stackoverflow dominates the whole Stackoexchange ecosystem. By any of the 
+exgensive measures (#users, #questions, #answers) Stackoverflow is more than
+ten times bigger than the next biggest (Super User).
+<img src="images/distrib-answers.png" alt="quantiles of log(#answers)" />
+<img src="images/distrib-users.png" alt="quantiles of log(#users)" />
+
+### Relationships between #questions, #answers, #users ###
+The linear relationship is quite good:
 <img src="images/answers-users.png" alt="#answers vs. #users" />
 <img src="images/questions-answers.png" alt="#answers vs. #questions" />
+
+### Percentage marked as answered vs. #questions ###
+The percentage of questions answered varies hugely, and there is a weak
+negative correlation between the percentage of questions marked as answered
+and the number of users.
 <img src="images/answered-questions.png" alt="%answered vs. #questions" />
 
 ## Directory structure ##
