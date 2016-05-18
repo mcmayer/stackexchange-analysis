@@ -7,16 +7,16 @@
 
 load('stackexchange.RData')     # load dataframe 'stackexchange'
 
-# Distribution of log(#answers)
+# Quantiles of log(#answers)
 png("images/distrib-answers.png", width=600, height=400)
 plot(rev(log10(sort(stackexchange[,'answers']))), type='o', 
-     ylab="log(#answers)", xlab='rank', main="distribution of log(#users)")
+     ylab="log(#answers)", xlab='rank', main="Quantiles of log(#answers)")
 dev.off()
 
-# Distribution of log(#users)
+# Quantiles of log(#users)
 png("images/distrib-users.png", width=600, height=400)
 plot(rev(log10(sort(stackexchange[,'users']))), type='o', 
-     ylab="log(#users)", xlab='rank', main="distribution of log(#users)")
+     ylab="log(#users)", xlab='rank', main="Quantiles of log(#users)")
 dev.off()
 
 # number of answers  vs. #users
