@@ -27,8 +27,8 @@ of the relationships between:
 
 ## Analysis ##
 ### Quantiles of log(#answers) and log(#users) ###
-Stackoverflow dominates the whole Stackoexchange ecosystem. By any of the 
-exgensive measures (#users, #questions, #answers) Stackoverflow is more than
+Stackoverflow dominates the whole Stackexchange ecosystem. By any of the 
+extensive measures (#users, #questions, #answers) Stackoverflow is more than
 ten times bigger than the next biggest (Super User).
 
 <img src="images/distrib-answers.png" alt="quantiles of log(#answers)" />
