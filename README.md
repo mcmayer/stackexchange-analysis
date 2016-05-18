@@ -30,11 +30,13 @@ of the relationships between:
 Stackoverflow dominates the whole Stackoexchange ecosystem. By any of the 
 exgensive measures (#users, #questions, #answers) Stackoverflow is more than
 ten times bigger than the next biggest (Super User).
+
 <img src="images/distrib-answers.png" alt="quantiles of log(#answers)" />
 <img src="images/distrib-users.png" alt="quantiles of log(#users)" />
 
 ### Relationships between #questions, #answers, #users ###
 The linear relationship is quite good:
+
 <img src="images/answers-users.png" alt="#answers vs. #users" />
 <img src="images/questions-answers.png" alt="#answers vs. #questions" />
 
@@ -42,6 +44,7 @@ The linear relationship is quite good:
 The percentage of questions answered varies hugely, and there is a weak
 negative correlation between the percentage of questions marked as answered
 and the number of users.
+
 <img src="images/answered-questions.png" alt="%answered vs. #questions" />
 
 ## Directory structure ##
