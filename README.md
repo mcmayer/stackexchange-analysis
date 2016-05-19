@@ -44,11 +44,15 @@ in all the scatterplots.
 <img src="images/distrib-answers.png" alt="quantiles of log(#answers)" />
 <img src="images/distrib-users.png" alt="quantiles of log(#users)" />
 
-### Relationships between #questions, #answers, #users ###
+### Relationships between #questions, #answers, #users and #comments ###
 The linear relationship is quite good:
 
 <img src="images/answers-users.png" alt="#answers vs. #users" />
 <img src="images/questions-answers.png" alt="#answers vs. #questions" />
+<img src="images/answers-comments.png" alt="#comments vs. #answers" />
+
+### Number of Tags ###
+<img src="images/tags-questions.png" alt="#questions vs. #tags" />
 
 ### Percentage marked as answered vs. #questions ###
 The percentage of questions answered varies hugely, and there is a weak
