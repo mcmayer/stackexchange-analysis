@@ -3,3 +3,6 @@
 *.csv
 *.RData
 *.Rout
+*.pyc
+*.pdf
+results
