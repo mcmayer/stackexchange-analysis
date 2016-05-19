@@ -12,7 +12,7 @@ containing the following statistics for each site:
 - Percentage of questions marked as answered
 - Link to site
 
-In addition, the questions page of each site is downloaded 
+In addition, the questions page of each site is downloaded
 (two downloads, actually) in order to extract the date of the first
 question. This date identifies the age of the site.
 
@@ -32,9 +32,9 @@ of the relationships between:
 
 ## Analysis ##
 ### Quantiles of log(#answers) and log(#users) ###
-Stackoverflow dominates the whole Stackoexchange ecosystem. By any of the
-exgensive measures (#users, #questions, #answers) Stackoverflow is more than
-ten times bigger than the next biggest (Super User). 
+Stackoverflow dominates the whole Stackexchange ecosystem. By any of the
+extensive measures (#users, #questions, #answers) Stackoverflow is more than
+ten times bigger than the next biggest (Super User).
 
 Since stackoveflow site is so dominant it is identified as a red point
 in all the scatterplots.
