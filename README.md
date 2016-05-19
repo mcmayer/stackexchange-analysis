@@ -71,7 +71,7 @@ The download is throttled and takes about 10 min for 150 sites.
 
 ### `load-sites.R` ###
 Load and format the output of `get-sites.py` and save the R data.frame with name
-`stackexchange` in the file in stackexchange.RData.
+`sites` in the file in sites.RData.
 
 ### `analysis.R` ###
 The data.frame prepared by `load.R` is loaded and a couple of graphs

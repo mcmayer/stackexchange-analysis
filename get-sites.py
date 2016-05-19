@@ -1,8 +1,8 @@
 #!/usr/bin/env python2
 """Parse http://stackexchange.com/sites and extract the statistics.
 
-The parsed data is dumped to stdout in tab delimited form.
-The data is also written to stackexchange.xlsx for consumption in MS Excel.
+The parsed data is written to sites.csv in tab delimited form.
+The data is also written to sites.xlsx for consumption in MS Excel.
 """
 
 from bs4 import BeautifulSoup
@@ -19,9 +19,9 @@ __date__ = 20160519
 # global settings
 wait_before_download = 2
 
-workbook = xlsxwriter.Workbook('stackexchange.xlsx')
+workbook = xlsxwriter.Workbook('sites.xlsx')
 worksheet = workbook.add_worksheet()
-file = open("stackexchange.csv", 'wb')		# may contain unicode
+file = open("sites.csv", 'wb')		# may contain unicode
 
 
 def get_start_date(url, driver):
@@ -120,7 +120,7 @@ for item in soup.findAll("div", {'class': "gv-item"}):
 # clean up
 driver.close()
 workbook.close()
-sys.stderr.write("Wrote {} lines to stackexchange.xlsx\n".format(counter))
+sys.stderr.write("Wrote {} lines to sites.xlsx\n".format(counter))
 file.write('\n')
 file.close()
-sys.stderr.write("Wrote {} lines to stackexchange.csv\n".format(counter))
+sys.stderr.write("Wrote {} lines to sites.csv\n".format(counter))
