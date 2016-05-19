@@ -1,7 +1,7 @@
 .PHONY: clean analysis
 
-analysis: analysis.R sites.RData
-	R CMD BATCH --vanilla analysis.R
+analysis: analyse-sites.R sites.RData
+	R CMD BATCH --vanilla analyse-sites.R
 
 sites.RData: load-sites.R sites.csv
 	R CMD BATCH --vanilla load-sites.R

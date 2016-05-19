@@ -20,4 +20,4 @@ sites[,'age'] = as.double(age)
 
 sites$'link' = as.character(sites$'link')
 
-save(sites, file='sites.RData')
+save(sites, file='sites.RData', compress=T)
