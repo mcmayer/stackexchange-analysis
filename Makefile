@@ -10,4 +10,4 @@ stackexchange.csv: get.py
 	python2 get.py
 
 clean:
-	 rm -f stackexchange.csv stackexchange.xlsx stackexchange.RData *.Rout images/*.png
+	 rm -f stackexchange.csv stackexchange.xlsx stackexchange.RData *.Rout images/*.png *.pyc
