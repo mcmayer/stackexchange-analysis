@@ -1,5 +1,6 @@
 # Author: mcmayer
-# Date: 2016-05-17
+# Date: 2016-05-19
+# (C) Markus Mayer
 
 # Load and format the output of 'get.py' and save the R data.frame with name
 # 'stackexchange' in the file in stackexchange.RData.
@@ -9,7 +10,14 @@
 
 filename = "stackexchange.csv"
 stackexchange = read.csv(filename, sep='\t', header=T)
-rownames(stackexchange) = stackexchange[,1]
+rownames(stackexchange) = stackexchange[,'name']
 stackexchange = stackexchange[rev(order(stackexchange[,'users'])),-1]
+
+dt = strptime(as.character(stackexchange[,'start_date']), "%F %T", tz='UTC')
+stackexchange$'start_date' = dt
+age = (Sys.time() - dt) / 365.2524  # age of site in years
+stackexchange[,'age'] = age
+
+stackexchange$'link' = as.character(stackexchange$'link')
 
 save(stackexchange, file='stackexchange.RData')
