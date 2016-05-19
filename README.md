@@ -61,7 +61,7 @@ and the number of users.
 <img src="images/age-users.png" alt="%answered vs. #questions" />
 
 ## Directory structure ##
-### `get.py` ###
+### `get-sites.py` ###
 This script downloads [http://stackexchange.com/sites](http://stackexchange.com/sites), parses it and extracts the statistics for each stackexchange site.
 
 The result is written to the file `stackexchange.csv` in tab delimited format, and the result is also written to `stackexchange.xlsx` for consumption
@@ -69,8 +69,8 @@ in MS Excel.
 
 The download is throttled and takes about 10 min for 150 sites.
 
-### `load.R` ###
-Load and format the output of `get.py` and save the R data.frame with name
+### `load-sites.R` ###
+Load and format the output of `get-sites.py` and save the R data.frame with name
 `stackexchange` in the file in stackexchange.RData.
 
 ### `analysis.R` ###
