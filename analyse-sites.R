@@ -6,6 +6,10 @@
 #
 
 load('sites.RData')     # load dataframe 'stackexchange'
+load('data.RData')      # load dataframe 'data'
+
+# combine the two datasets
+sites = cbind(sites, data[sites[,'link'],c('comments', 'tags')])
 
 # Quantiles of log(#answers)
 png("images/distrib-answers.png", width=600, height=400)
@@ -40,7 +44,7 @@ plot(log10(sites[,'users']), sites[,'answered'],
 points(log10(sites[1,'users']), sites[1,'answered'], col='red')
 dev.off()
 
-# age vs. users
+# users vs. age
 png('images/age-users.png', width=600, height=400)
 a = sites[,'age']
 u =  log10(sites[,'users'])
@@ -48,4 +52,18 @@ plot(a, u, xlab='age/years', ylab='log(#users)', main="age/years vs. #users")
 points(a[1], u[1], col='red')
 smu = supsmu(a[-1], u[-1], bass=1)
 lines(smu, col='blue')
+dev.off()
+
+# #comments vs. #answers
+png('images/answers-comments.png', width=600, height=400)
+plot(log10(sites[,'comments']), log10(sites[,'answers']),
+     ylab="log(#comments)", xlab="log(#answers)", main="#comments vs. #answers")
+points(log10(sites[1,'comments']), log10(sites[1,'answers']), col='red')
+dev.off()
+
+# #tags vs. #questions
+png('images/tags-questions.png', width=600, height=400)
+plot(log10(sites[,'questions']), log10(sites[,'tags']),
+     xlab="log(#questions)", ylab="log(#tags)", main="#questions vs. #tags")
+points(log10(sites[1,'questions']), log10(sites[1,'tags']), col='red')
 dev.off()
