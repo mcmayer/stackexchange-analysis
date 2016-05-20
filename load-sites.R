@@ -20,4 +20,21 @@ sites[,'age'] = as.double(age)
 
 sites$'link' = as.character(sites$'link')
 
+# make filenames
+filenames = strsplit(gsub('http://', '', sites$'link'), '\\.')
+filenames = unlist(lapply(filenames, function(x) x[1]))
+sites[,'filename'] = filenames
+
+# make a bash executable file: run get-site.py on every site that does not have
+# a results/<filename>.csv file, where <filename> is as per above.
+write("#!/usr/bin/env bash", "execute.sh", append = F)
+for(i in rev(seq(nrow(sites)))) {
+  filename = sites[i, 'filename']
+  url = sites[i, 'link']
+  target = paste('results', filename, sep='/')
+  if(!file.exists(target)) {
+    write(paste("python2 get-site.py ", url, ">", target, ".csv", sep=""), "execute.sh", append = T)
+  }
+}
+
 save(sites, file='sites.RData', compress=T)
