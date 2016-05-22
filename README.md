@@ -33,19 +33,24 @@ of the relationships between:
 - the age of the site (years since first question asked).
 
 ## Analysis ##
-### Quantiles of log(#answers) and log(#users) ###
+### Quantiles of log(#questions) and log(#users) ###
 Stackoverflow dominates the whole Stackexchange ecosystem. By any of the
 extensive measures (#users, #questions, #answers) Stackoverflow is more than
 ten times bigger than the next biggest (Super User).
 
-Since stackoveflow site is so dominant it is identified as a red point
-in all the scatterplots.
-
-<img src="images/distrib-answers.png" alt="quantiles of log(#answers)" />
-<img src="images/distrib-users.png" alt="quantiles of log(#users)" />
+<img src="images/quantiles.png" alt="quantiles of log(#questions), log(#users)" />
 
 ### Relationships between #questions, #answers, #users and #comments ###
-The linear relationship is quite good:
+The relationships are analysed in log-log space. Linearity in log-log
+implies a power law, 
+
+<center>log(y) = a log(x) + b => y = C </sup> x<sup>a</sup>, C>0</center>
+
+So if the regression coefficient a=1 the relationship is linear with zero
+intercept.
+
+Since stackoveflow site is so dominant it is identified as a red point
+in all the scatterplots.
 
 <img src="images/answers-users.png" alt="#answers vs. #users" />
 <img src="images/questions-answers.png" alt="#answers vs. #questions" />
