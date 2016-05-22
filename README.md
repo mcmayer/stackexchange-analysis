@@ -67,6 +67,9 @@ means having about 2.2 times more answers.
 <center>
 <img src="images/answers-users.png" alt="#answers vs. #users" width=500 />
 </center>
+The linearity of #answers vs. #questions implies that the number of questions
+has a similar relation to the number of users. This seems to imply that
+a level of activity can only be maintained by the influx of new users.
 
 ### Number of Tags ###
 As can be expected, a site with more questions asked also has more tags.
@@ -82,10 +85,39 @@ and the number of users.
 <img src="images/answered-users.png" alt="%answered vs. #questions" width=500 />
 </center>
 
-### Site age vs. #users ###
+### #Users vs. site age  ###
 Site age is the time (in years) since the first posted question.
 <center>
 <img src="images/age-users.png" alt="%answered vs. #questions" width=500 />
+</center>
+Note that the stackoverflow site is not included in the regression.
+
+### #Site growth rate vs. site age ###
+<center>
+<img src="images/age-growth.png" alt="site growth (questions) vs. site age" width=500 />
+</center>
+
+**Note**: New Stackexchange sites go through three phases before they are accepted. (See [http://area51.stackexchange.com](http://area51.stackexchange.com/faq).)
+
+1. During the "**definition**" phase hypothetical questions are proposed and votes are cast whether or not they are good questions for the site.
+2. In the "**commitment**" phase a petition for the site's creation is presented and interested users are asked to digitally sign the proposal.
+3. In the "**beta**" phase the site goes live on a probationary basis to see if people use it. If the site does not get used, it will be deleted. 
+
+This means that a site goes into beta already many questions pre-defined,
+and therefore disproportianately many questions are asked shortly after going
+into beta. In order to account for this (in a very crude manner)
+the growth rate is defined as 
+
+<center>growth rate = log<sub>10</sub>(#questions / (age+1/12)),</center>
+
+i.e. the age is set to be effectilvely one month more than nominally.
+
+It is interesing to plot the same graph with the number of users as a measure
+of site growth. The older sites had a higher average user growth rate than the 
+younger sites.
+
+<center>
+<img src="images/age-user-growth.png" alt="site growth (users) vs. site age" width=500 />
 </center>
 
 ## Directory structure ##

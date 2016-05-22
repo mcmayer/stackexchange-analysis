@@ -58,14 +58,45 @@ reg = lm(answered~log10(users), data=sites)
 abline(reg, col='blue')
 dev.off()
 
-# users vs. age
+# users vs. site age
 png('images/age-users.png', height=10, width=15, units = 'cm', res=300)
 a = sites[,'age']
 u =  log10(sites[,'users'])
-plot(a, u, xlab='site age/years', ylab='log(#users)', main="age/years vs. #users")
+plot(a, u, xlab='site age/years', ylab='log(#users)', main="site age/years vs. #users")
 points(a[1], u[1], col='red')
 smu = supsmu(a[-1], u[-1], bass=1)
 lines(smu, col='blue')
+rm(a,u,smu)
+dev.off()
+
+# site growth (questions) vs. site age
+png('images/age-growth.png', height=10, width=15, units = 'cm', res=300)
+a = sites[,'age']
+g =  log10(sites[,'questions']/(a+1/12))
+ylim = range(g); ylim = ylim + c(-.2, .2)
+plot(a, g, xlab='site age/years', ylab='log(Site growth: Questions/year)', 
+     ylim=ylim, main="Average site growth (questions per year) vs. site age")
+i = grep('Stack Overflow.*', rownames(sites))
+points(a[i], g[i], col='red', lwd=2, cex=.9)
+text(a[i], g[i], rownames(sites)[i], pos=3, cex=.5, col='red')
+smu = supsmu(a[-1], g[-1], bass=1)
+lines(smu, col='blue')
+rm(a,g,smu, ylim)
+dev.off()
+
+# site growth (users) vs. site age
+png('images/age-user-growth.png', height=10, width=15, units = 'cm', res=300)
+a = sites[,'age']
+g =  log10(sites[,'users']/(a+1/12))
+ylim = range(g); ylim = ylim + c(-.2, .2)
+plot(a, g, xlab='site age/years', ylab='log(Average site growth: Users/year)', 
+     ylim=ylim, main="Average site growth (users per years) vs. site age")
+i = grep('Stack Overflow.*', rownames(sites))
+points(a[i], g[i], col='red', lwd=2, cex=.9)
+text(a[i], g[i], rownames(sites)[i], pos=3, cex=.5, col='red')
+smu = supsmu(a[-1], g[-1], bass=1)
+lines(smu, col='blue')
+rm(a,g,smu, ylim)
 dev.off()
 
 # #comments vs. #answers
