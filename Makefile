@@ -3,11 +3,11 @@
 analysis: analyse-sites.R sites.RData data.RData
 	R CMD BATCH --vanilla analyse-sites.R
 
-data.RData: load-data.R data.csv
-	R CMD BATCH --vanilla load-data.R
+data.RData: make-data.R data.csv
+	R CMD BATCH --vanilla make-data.R
 
-sites.RData: load-sites.R sites.csv
-	R CMD BATCH --vanilla load-sites.R
+sites.RData: make-sites.R sites.csv
+	R CMD BATCH --vanilla make-sites.R
 
 data.csv: get-data.py
 	python2 get-data.py

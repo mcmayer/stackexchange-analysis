@@ -31,9 +31,9 @@ write("#!/usr/bin/env bash", "execute.sh", append = F)
 for(i in rev(seq(nrow(sites)))) {
   filename = sites[i, 'filename']
   url = sites[i, 'link']
-  target = paste('results', filename, sep='/')
+  target = paste('results/', filename, '.csv', sep='')
   if(!file.exists(target)) {
-    write(paste("python2 get-site.py ", url, ">", target, ".csv", sep=""), "execute.sh", append = T)
+    write(paste("python2 get-site.py ", url, ">", target, sep=""), "execute.sh", append = T)
   }
 }
 
